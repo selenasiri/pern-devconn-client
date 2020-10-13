@@ -1,7 +1,11 @@
 import React, { Fragment, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setAlert } from '../../actions/alert';
 
-export const Register = () => {
+const Register = () => {
+  const dispatch = useDispatch()
+
   const [formData, setFormData] =useState({
     name: '',
     email: '',
@@ -15,8 +19,9 @@ export const Register = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    if(password !== password2) {
-      console.log('Passwords do not match');
+
+    if (password !== password2) {
+      dispatch(setAlert('Passwords do not match', 'danger'))
     } else {
       console.log('SUCCESS');
     }
@@ -27,7 +32,7 @@ export const Register = () => {
       <section className="container">
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
+      <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <input 
           type="text" 
@@ -81,4 +86,7 @@ export const Register = () => {
   )
 }
 
-export default Register;
+export default Register
+
+// export default connect(mapStateToProps, action object(s))
+// ptfr + enter button, above creates: PropTypes.func.isRequired 
