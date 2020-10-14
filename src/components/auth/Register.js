@@ -88,6 +88,7 @@ const Register = () => {
   )
 }
 
+
 export default Register
 
 // export default connect(mapStateToProps, action object(s))

@@ -5,3 +5,5 @@ export const REGISTER_FAIL = 'REGISTER_FAIL'; // Now dealing with backend HTTP (
 //make a request, get response, and render success or fail
 export const USER_LOADED = 'USER_LOADED';
 export const AUTH_ERROR = 'AUTH_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';

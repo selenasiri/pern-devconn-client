@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'; 
+import { login } from '../../actions/auth';
 
 const Login = () => {
   const [formData, setFormData] =useState({
@@ -54,4 +56,11 @@ const Login = () => {
   )
 };
 
-export default Login;
+// Login.propTypes = {
+//   login: PropTypes.func.isRequired, //ptfr
+// }
+
+export default connect(null, { login })(Login);
+//connect(mapStateToProps, action)
+
+// Then add login as a prop for 'const Login' above. 
