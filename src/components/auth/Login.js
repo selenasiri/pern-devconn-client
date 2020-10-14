@@ -18,6 +18,14 @@ const Login = () => {
     console.log('SUCCESS');
   }
 
+
+  //Redirect if logged in
+  // if(isAuthenticated) {
+  //   return <Redirect to="/dashboard" />
+  // }
+
+  //Also import { Link, Redirect } from 'react-router-dom';
+
   return (
     <Fragment>
       <section className="container">
@@ -57,10 +65,15 @@ const Login = () => {
 };
 
 // Login.propTypes = {
-//   login: PropTypes.func.isRequired, //ptfr
+//   login: PropTypes.func.isRequired, //ptfr + enter
+//   isAuthenticated: propTypes.bool //ptb + enter
 // }
+
+// const mapStateToProps = state => ({
+//   isAuthenticated: state.auth.isAuthenticated
+// });
 
 export default connect(null, { login })(Login);
 //connect(mapStateToProps, action)
 
-// Then add login as a prop for 'const Login' above. 
+// Then add login, isAuthenticated as props for 'const Login' above. 
