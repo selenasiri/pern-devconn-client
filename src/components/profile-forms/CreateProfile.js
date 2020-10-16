@@ -37,6 +37,9 @@ const CreateProfile = () => {
     instagram
   } = formData;
 
+  const onChange = e => setFormData({ ...formData, [e.target.name]});
+
+
   return (
     <>
       <h1 className="large text-primary">
@@ -49,7 +52,7 @@ const CreateProfile = () => {
       <small>* = required field</small>
       <form className="form">
         <div className="form-group">
-          <select name="status">
+          <select name="status" value={status} onChange={() => onChange(e)}>
             <option value="0">* Select Professional Status</option>
             <option value="Developer">Developer</option>
             <option value="Junior Developer">Junior Developer</option>
