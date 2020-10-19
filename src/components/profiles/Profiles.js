@@ -10,7 +10,7 @@ const Profiles = () => {
 
   useEffect(() => {
     dispatch(getProfiles());
-  }, [getProfiles]);
+  }, [dispatch, getProfiles]);
 
   if (loading) {
     return <Spinner />

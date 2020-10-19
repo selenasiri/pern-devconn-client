@@ -2,17 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.4.0",
-    "moment": "^2.24.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-moment": "^0.9.7",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-    "uuid": "^7.0.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,5 +23,16 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "moment": "^2.29.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-moment": "^1.0.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "uuid": "^8.3.1"
+  }
 }

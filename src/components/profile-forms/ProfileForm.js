@@ -29,7 +29,9 @@ const ProfileForm = () => {
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   useEffect(() => {
-    if (!profile) dispatch(getCurrentProfile());
+    if (!profile) {
+      dispatch(getCurrentProfile());
+    }
 
     if (!loading && profile) {
       const profileData = { ...initialState };
@@ -45,7 +47,7 @@ const ProfileForm = () => {
 
       setFormData(profileData);
     }
-  }, [loading, getCurrentProfile, profile]);
+  }, [dispatch, loading, getCurrentProfile, profile]);
 
   const {
     company,

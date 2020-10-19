@@ -21,7 +21,7 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(getProfileById(id));
-  }, [getProfileById, id]);
+  }, [useEffect, getProfileById, id]);
 
   return (
     <>

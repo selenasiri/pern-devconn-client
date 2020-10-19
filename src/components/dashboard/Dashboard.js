@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getCurrentProfile());
-  }, [getCurrentProfile]);
+  }, [dispatch, getCurrentProfile]);
 
   return (
     <>
