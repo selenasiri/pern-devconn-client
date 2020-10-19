@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Routes from './components/routing/Routes';
+import Posts from './components/posts/Posts';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -11,6 +12,7 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 const App = () => {
   useEffect(() => {
@@ -26,6 +28,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />
+            <PrivateRoute exact path='/posts' component={Posts} />
           </Switch>
         </>
       </Router>
