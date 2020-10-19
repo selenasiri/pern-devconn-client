@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Link, withRouter, useHistory } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { createProfile, getCurrentProfile } from '../../actions/profile'
+import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { createProfile } from '../../actions/profile'
 
-const CreateProfile = ( createProfile, history) => {
+const CreateProfile = () => {
+  const history = useHistory();
+  const dispatch = useDispatch()
+
   const [formData, setFormData] = useState({
     //put default values and fields here:
     company: '',
@@ -44,7 +47,7 @@ const CreateProfile = ( createProfile, history) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history);
+    dispatch(createProfile(formData, history));
   }
 
   return (
@@ -151,7 +154,6 @@ const CreateProfile = ( createProfile, history) => {
         </div>
           </>}
 
-        
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>

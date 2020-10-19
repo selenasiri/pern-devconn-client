@@ -6,7 +6,7 @@ const Alert = () => {
   console.log(alerts)
 
   if (alerts == null ||  alerts.length === 0 ) {
-    return null;
+    return null
   }
 
   return (
@@ -20,4 +20,3 @@ const Alert = () => {
 
 export default Alert
 
-//rafcp => setup, when using props
