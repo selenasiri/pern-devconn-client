@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Routes from './components/routing/Routes';
 import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -29,6 +30,7 @@ const App = () => {
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />
             <PrivateRoute exact path='/posts' component={Posts} />
+            <PrivateRoute exact path='/posts/:id' component={Post} />
           </Switch>
         </>
       </Router>
