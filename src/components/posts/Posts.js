@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { getPosts } from '../../actions/post';
 import Spinner from '../layout/Spinner'
 import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post';
+
 
 const Posts = ({ getPosts, post: { posts, loading }}) => {
   useEffect(() => {
@@ -14,7 +16,7 @@ const Posts = ({ getPosts, post: { posts, loading }}) => {
    <p className="lead">
     <i className="fas fa-user">Welcome to the community</i>
   </p>
-  {/* PostForm */}
+  <PostForm />
   <div>
     {posts.map(post => (
       <PostItem key={post._id} post={post} />
