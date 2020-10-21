@@ -4,6 +4,8 @@ import Spinner from '../layout/Spinner'
 import PostItem from './PostItem'
 import PostForm from './PostForm'
 import { getPost } from '../../actions/post';
+import CommentForm from '../post/CommentForm';
+import post from '../../reducers/post';
 
 
 const Posts = ({ getPosts, post: { posts, loading }}) => {
@@ -22,6 +24,7 @@ const Posts = ({ getPosts, post: { posts, loading }}) => {
       <PostItem key={post._id} post={post} />
     ))}
   </div>
+  <CommentForm postId={post._id} /> 
   </Fragment>;
 };
 
